@@ -1,12 +1,10 @@
 import { withPluginApi } from 'discourse/lib/plugin-api'
 
 function initializePlugin(api) {
-  console.log(api)
 
 api.decorateWidget('poster-name:after', helper => {
   let h = helper.h,
   attrs = helper.attrs;
-  console.log(attrs);
   if(attrs.userCustomFields && attrs.userCustomFields.user_field_2){
     return helper.h('a.designer-url', {href: attrs.userCustomFields.user_field_2 },helper.h('div.is-designer', 'Designer'));       
   } else {}
